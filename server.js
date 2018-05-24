@@ -2,26 +2,30 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+
+const port = process.env.PORT || 3000;
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials')
 app.set('view engine', 'hbs')
 
+// Middleware qui enregistre les logs serveurs
 app.use((req, res, next) => {
 	var now = new Date().toString();
-	var log = `${now}: ${req.method} ${req.url}`;
-	console.log(log)
+	var log = `${now}: ${req.method} ${req.url} ${req.ip}`;
+
+	console.log(`${log}`);
 	fs.appendFile('server.log', log + '\n', (err) => {
 		if (err) {
-			console.log('Unable to append server.log.')
+			console.log('Unable to append server.log')
 		}
 	});
 	next();
 });
 
-// Code for maintenace that'll overwrite any other code.
+// Remplace n'importe quelle tentative d'accès par l'affichage de la page de maintenance
 // app.use((req, res, next) => {
-// 	res.render('maintenance.hbs');
+// 	res.render('maintenance.hbs')
 // });
 
 app.use(express.static(__dirname + '/public'));
@@ -35,37 +39,27 @@ hbs.registerHelper('screamIt', (text) => {
 });
 
 app.get('/', (req, res) => {
+//	res.send('<h1>Hello Express!</h1>');
 	res.render('home.hbs', {
-		pageH1: "Home Page",
-		pageTitle: "Home Page"
+		pageTitle: 'Homepage of this wonderful website',
+		welcomeMessage :'Welcome to this website !',
 	});
-});
-
+})
 
 app.get('/about', (req, res) => {
 	res.render('about.hbs', {
-		pageTitle: "About Page"
+		pageTitle: 'About Page',
 	});
 });
 
+
 app.get('/bad', (req, res) => {
-	res.send({ErrorNumber: '404',
-			ErrorMessage: 'Sorry, could not find the resource on the server, bitch'
-		});
+	res.send({
+		content: 'Error',
+		errorType : '404 File not found'
+	});
+})
+
+app.listen(port, () => {
+	console.log(`Server is up on port ${port}.`)
 });
-
-app.listen(3000, () => {
-	console.log('Server is up.')
-});
-
-
-
-// app.get('/', (req, res) => {
-// 	// res.send('<h1>Hello Express!</h1>');
-// 	res.send({name: 'Arnaud',
-// 			likes: [
-// 			'RC Model', 
-// 			'Computers'
-// 			]
-// 		});
-// });
