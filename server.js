@@ -2,7 +2,6 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
-
 const port = process.env.PORT || 3000;
 var app = express();
 
@@ -29,6 +28,8 @@ app.use((req, res, next) => {
 // });
 
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/stylesheets'));
+app.use(express.static(__dirname + '/public/media'));
 
 hbs.registerHelper('getCurrentYear', () => {
 	return new Date().getFullYear();
@@ -42,13 +43,19 @@ app.get('/', (req, res) => {
 //	res.send('<h1>Hello Express!</h1>');
 	res.render('home.hbs', {
 		pageTitle: 'Homepage of this wonderful website',
-		welcomeMessage :'Welcome to this website !',
+		welcomeMessage :'Les Outils SEO de MindFruits !',
 	});
 })
 
 app.get('/about', (req, res) => {
 	res.render('about.hbs', {
 		pageTitle: 'About Page',
+	});
+});
+
+app.get('/portfolio', (req, res) => {
+	res.render('portfolio.hbs', {
+		pageTitle: 'Find here our best Portfolio',
 	});
 });
 
