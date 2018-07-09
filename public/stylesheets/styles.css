@@ -1,38 +1,319 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
 @import url(http://fonts.googleapis.com/css?family=Raleway:700);
 
+/* Style pour les boutons larges des catégories principales */
+#add_cta h3 {
+  text-align: center;
+}
+
+.button-tools {
+  background-color: #F5515A;
+  color: white;
+  border-radius: 10px;
+  margin:10px;
+  width:100%;
+}
+
+.button-tools .cta {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-tools .cta p {
+  color: white;
+  text-transform: uppercase;
+  font-size:20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.button-tools h2 {
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.button-tools p {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.button-tools div {
+  padding:20px;
+  min-height: 120px;
+}
+
+/* Style pour les éléments de la page Outils SEO */
+.tool-picture-div img {
+  height:200px;
+}
+
+.first-tool-col {
+  float:left;
+  min-height:160px; 
+  margin-top:20px;
+  margin-left:2%;
+  margin-right:2%;
+  margin-bottom:20px;
+  width: 29.33%;
+  border:1px solid #56575a;
+  border-radius:15px;
+}
+
+.second-tool-col {
+  margin:30px;
+  min-height: 150px;
+  text-align: center;
+}
+
+.tool-picture {
+  width:100%;
+  border-top-left-radius:15px;
+  border-top-right-radius:15px;
+}
+
+.first-tool-col h2 {
+  color:black;
+  font-size:20px;
+  margin-top:10px;
+  margin-bottom:20px;
+}
+
+.first-tool-col h2:hover {
+  color: #a3cc6e;
+    -webkit-transition: color 0.2s; /* For Safari 3.1 to 6.0 */
+    transition: color 0.2s;
+  }
+
+
+.first-tool-col p {
+  margin-bottom: 25px
+}
+
+a,a:hover {
+  color: inherit;
+    text-decoration: inherit;
+}
+
+
+@media screen and (max-width: 768px) {
+  .first-tool-col {
+    float:none;
+    width:85%;
+  }
+}
+
+
+/* Style pour les éléments de la page meta-optimizer */
+.res-metades {
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  color: #000000;
+}
+
+.res-url {
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  color: #006621;
+}
+
+.res-title {
+  font-family: arial,sans-serif;
+  font-size: 18px;
+  color: #1a0dab;
+}
+
+.google-frame {
+  background-color: #FFFFFF;
+  height:200px;
+  width:100%;
+  max-width:640px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+/* Style pour la page assembleurs de mots-clés */
+
+#add_cta {
+  float: left;
+  width: 48%;
+  margin-left: 2%;
+}
+
+#keyword_result {
+  float: left;
+  width: 48%;
+  margin-right: 2px;
+}
+
+.keyword_buttons {
+  text-align: center;
+  margin: 20px;
+}
+
+.keyword_buttons button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.second_assemblers {
+  text-align: center;
+  border-bottom: 50px;
+}
+
+.second_assemblers button {
+  background-color:#64C271;
+  border-color:#55A560;
+}
+
+.second_assemblers button:hover {
+  background-color:#55A560;
+  border-color:#55A560;
+}
+
 .copyright {
   text-align: center;
 }
 
-body {
-  width: 60%;
-  margin: auto;
-  color: white;
-  background-color: black;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
+textarea.keyword_textarea_result {
+  text-align:left;
+  margin:0;
+  width:99%;
+}
+
+textarea.keyword_textarea {
+  text-align:left;
+  margin:0;
+  width:99%;
+  height:120px;
 }
 
 
+/*                */
+
+.hero-section {
+  width: 100%;
+  height: 200px;
+  background-size: 100%;
+  margin-bottom: 10px;
+}
+
+div.h1_block {
+  vertical-align: baseline;
+  position:absolute;
+  text-align: left;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.h1_block h1 {
+  color: #ffffff;
+  font-size: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 80%;
+  top: 50%;
+  transform: translateY(50%);
+}
+
+.h1_elements {
+  vertical-align: middle;
+}
+
+.h1_block hr {
+  width: 30%;
+  font-weight: 20px;
+  top: 50%;
+  transform: translateY(50%);
+}
+
+h2 {
+  color: #a3cc6e;
+}
+
+h3 {
+  color: #a3cc6e;
+  font-size: 18px;
+}
+
+button.btn.btn-primary.btn-lg {
+  text-align: center;
+  font-size:18px;
+  margin-top: 10px;
+}
+
+div.URL_box {
+  text-align: center;
+}
+
+/* Ci-après sont les propriétés principales */
+
+body {
+  width: 60%;
+  margin: auto;
+  color: #56575a;
+  background-color: #F6F6F6;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+
+footer {
+/*  position:relative;
+  text-align: center;
+  bottom:0;
+  width:100%;
+  padding-top:30px;
+  height:50px;*/
+  position:relative;
+  display:inline-block;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
+  margin-top: 40px;		
+}
+
+/* Ci-après sont les propriétés du site responsives */
 
 @media screen and (max-width: 768px) {
   body {
     width: 95%;
   }
 
+  .h1_block h1 {
+    font-size: 14px;
+  }
+
   body p {
     margin-left: 5px;
     margin-right: 5px;
   }
+
+  .hero-section {
+    width: 100%;
+    height: 75px;
+    background-size: 100%;
+  }
+
+  footer {
+    text-align: center;
+    bottom:0;
+    padding-top:10px;
+    height:50px;
+    font-size: 10px;
+    width: 100%;
+  }
+
 }
 
 
-
-
-
+/* Ci-après sont les propriétés du menu CSS */
 #cssmenu {
-  background: #f96e5b;
+  background: #F6F6F6;
   width: auto;
 }
 #cssmenu ul {
@@ -63,11 +344,11 @@ body {
   text-align: center;
 }
 #cssmenu ul li a {
-  color: #ffffff;
+  color: #9d9d9d;
   text-decoration: none;
   display: block;
   padding: 15px 25px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 14px;
@@ -79,7 +360,7 @@ body {
   transition: color .25s;
 }
 #cssmenu ul li a:hover {
-  color: #333333;
+  color: #a3cc6e;
 }
 #cssmenu ul li a:hover:before {
   width: 100%;
@@ -92,7 +373,7 @@ body {
   top: 19px;
   height: 6px;
   width: 6px;
-  background: #ffffff;
+  background: #9d9d9d;
   opacity: .5;
 }
 #cssmenu ul li a:before {
@@ -103,7 +384,7 @@ body {
   bottom: 0;
   height: 3px;
   width: 0;
-  background: #333333;
+  background: #a3cc6e;
   -webkit-transition: width .25s;
   -moz-transition: width .25s;
   -ms-transition: width .25s;
@@ -115,7 +396,7 @@ body {
   display: none;
 }
 #cssmenu ul li.active a {
-  color: #333333;
+  color: #a3cc6e;
 }
 #cssmenu ul li.active a:before {
   width: 100%;
@@ -132,13 +413,15 @@ body {
     float: none;
     display: block;
   }
+
   #cssmenu ul li a {
     width: 100%;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    border-bottom: 1px solid #fb998c;
+    border-bottom: 1px solid #a3cc6e;
   }
+
   #cssmenu ul li.last > a,
   #cssmenu ul li:last-child > a {
     border: 0;
